@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
+        .font-sans { font-family: 'Manrope', sans-serif; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#c1e8ff",
+                        "primary-container": "#1e3a5f",
+                        "surface-dim": "#d9dadb",
+                        "tertiary-container": "#503300",
+                        "on-surface-variant": "#43474e",
+                        "surface-container-high": "#e7e8e9",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#8aa4cf",
+                        "secondary-fixed-dim": "#81d0f8",
+                        "inverse-primary": "#adc8f5",
+                        "outline-variant": "#c4c6cf",
+                        "tertiary-fixed": "#ffddb2",
+                        "surface-bright": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#60410c",
+                        "on-primary-fixed": "#001c3b",
+                        "secondary-container": "#87d6fe",
+                        "primary-fixed-dim": "#adc8f5",
+                        "on-secondary-fixed-variant": "#004d67",
+                        "on-primary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "secondary": "#006687",
+                        "on-tertiary-container": "#c69b5f",
+                        "tertiary-fixed-dim": "#edbf7f",
+                        "surface": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "primary": "#022448",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "on-secondary-container": "#005d7c",
+                        "background": "#f8f9fa",
+                        "surface-tint": "#455f87",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-fixed-variant": "#2d486d",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "tertiary": "#341f00",
+                        "surface-container-highest": "#e1e3e4",
+                        "outline": "#74777f",
+                        "on-secondary-fixed": "#001e2b",
+                        "on-tertiary-fixed": "#291800",
+                        "primary-fixed": "#d5e3ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface-container-low font-sans text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl fixed top-0 w-full z-50 shadow-sm dark:shadow-none flex justify-between items-center px-12 h-20 max-w-full">
+<div class="text-2xl font-serif italic text-blue-900 dark:text-blue-50 serif-italic" style="">ResearchBridge</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300 font-sans text-sm tracking-wide" href="#" style="">Platform</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300 font-sans text-sm tracking-wide" href="#" style="">Scholars</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300 font-sans text-sm tracking-wide" href="#" style=""><br></a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300 font-sans text-sm tracking-wide" href="#" style="">About</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-700 transition-colors px-4 py-2 text-sm tracking-wide" style="">Sign In</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-md font-medium text-sm tracking-wide transition-all active:opacity-70" style="">Join Now</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center pt-32 pb-20 px-6">
+<div class="max-w-2xl w-full bg-surface-container-lowest rounded-xl p-10 shadow-sm border border-outline-variant/10">
+<!-- Step Progress Header -->
+<div class="mb-10">
+<div class="flex justify-between items-end mb-4">
+<span class="text-xs font-sans uppercase tracking-widest text-secondary font-bold" style="">Step 2 of 4</span>
+<span class="text-xs font-sans text-outline" style="">50% Complete</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden flex">
+<div class="h-full bg-secondary-container w-1/4"></div>
+<div class="h-full bg-secondary-container w-1/4"></div>
+<div class="h-full bg-surface-container-high w-1/4"></div>
+<div class="h-full bg-surface-container-high w-1/4"></div>
+</div>
+</div>
+<!-- Form Title -->
+<div class="mb-8">
+<h1 class="text-4xl serif-italic text-primary mb-2" style="">Your Research Interests</h1>
+<p class="text-on-surface-variant text-sm font-sans" style="">Help us match you with labs that align with your intellectual curiosity.</p>
+</div>
+<!-- Intake Form -->
+<form class="space-y-10">
+<!-- Textarea Field -->
+<div class="relative">
+<div class="flex items-center gap-2 mb-3">
+<label class="text-sm font-bold tracking-tight text-primary uppercase" style="">What topics fascinate you?</label>
+<div class="group relative inline-block">
+<span class="material-symbols-outlined text-outline text-lg cursor-help" style="">help</span>
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 w-64 p-4 bg-primary text-on-primary text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl z-10 leading-relaxed" style="">
+                                Don’t worry about being precise — write naturally. Our AI extracts the keywords that matter.
+                                <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-primary"></div>
+</div>
+</div>
+</div>
+<textarea class="w-full min-h-[160px] bg-transparent border-b border-outline focus:border-secondary focus:ring-0 px-0 py-3 text-on-surface placeholder:text-outline-variant resize-none font-sans leading-relaxed" placeholder="e.g. I'm interested in how machine learning can detect cancer in medical imaging..."></textarea>
+<div class="text-right mt-2">
+<span class="text-[10px] font-sans text-outline tracking-tighter uppercase" style="">0 / 500 characters</span>
+</div>
+</div>
+<!-- Multi-select Chip Group -->
+<div>
+<label class="block text-sm font-bold tracking-tight text-primary uppercase mb-4" style="">Prior Experience</label>
+<div class="flex flex-wrap gap-3">
+<button class="px-5 py-2.5 bg-primary text-on-primary rounded-lg text-sm font-medium transition-all shadow-md" type="button" style="">
+                            No research experience
+                        </button>
+<button class="px-5 py-2.5 border border-outline-variant text-on-surface-variant rounded-lg text-sm font-medium hover:bg-surface-container transition-all" type="button" style="">
+                            Relevant coursework
+                        </button>
+<button class="px-5 py-2.5 border border-outline-variant text-on-surface-variant rounded-lg text-sm font-medium hover:bg-surface-container transition-all" type="button" style="">
+                            Volunteer or club research
+                        </button>
+</div>
+</div>
+<!-- Toggle Switch -->
+<div class="flex items-center justify-between p-4 bg-surface-container-low rounded-xl">
+<div class="flex flex-col">
+<span class="text-sm font-bold text-primary" style="">Interdisciplinary exploration</span>
+<span class="text-xs text-on-surface-variant" style="">I'm open to labs outside my exact major</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer" style="">
+<input checked="" class="sr-only peer" type="checkbox" value="">
+<div class="w-11 h-6 bg-outline-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary-container"></div>
+</label>
+</div>
+<!-- Navigation Buttons -->
+<div class="flex items-center justify-between pt-6">
+<button class="flex items-center gap-2 px-6 py-3 border border-outline-variant text-primary font-bold rounded-lg hover:bg-surface-container transition-all text-sm uppercase tracking-widest" type="button" style="">
+<span class="material-symbols-outlined text-lg" style="">arrow_back</span>
+                        Back
+                    </button>
+<button class="flex items-center gap-2 px-10 py-3 bg-primary text-on-primary font-bold rounded-lg hover:opacity-90 transition-all text-sm uppercase tracking-widest shadow-lg" type="button" style="">
+                        Next
+                        <span class="material-symbols-outlined text-lg" style="">arrow_forward</span>
+</button>
+</div>
+</form>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 w-full mt-auto py-12 flex flex-col items-center justify-center space-y-6 px-8 border-t border-slate-200/15">
+<div class="font-serif text-lg italic text-blue-900 serif-italic" style="">ResearchBridge</div>
+<div class="flex space-x-8">
+<a class="font-sans text-xs uppercase tracking-widest text-slate-500 hover:text-blue-800 transition-colors" href="#" style="">Privacy Policy</a>
+<a class="font-sans text-xs uppercase tracking-widest text-slate-500 hover:text-blue-800 transition-colors" href="#" style="">Ethical Guidelines</a>
+<a class="font-sans text-xs uppercase tracking-widest text-slate-500 hover:text-blue-800 transition-colors" href="#" style="">Academic Integrity</a>
+<a class="font-sans text-xs uppercase tracking-widest text-slate-500 hover:text-blue-800 transition-colors" href="#" style="">OpenAI Codex</a>
+</div>
+<p class="font-sans text-xs uppercase tracking-widest text-slate-500 opacity-60" style="">© 2024 ResearchBridge. The Scholar's Sanctuary.</p>
+</footer>
+</body></html>

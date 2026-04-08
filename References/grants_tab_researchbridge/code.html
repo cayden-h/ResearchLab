@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ResearchBridge | Grants Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "tertiary-fixed-dim": "#edbf7f",
+                      "on-secondary-fixed": "#001e2b",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#c69b5f",
+                      "surface": "#f8f9fa",
+                      "secondary-fixed-dim": "#81d0f8",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#c1e8ff",
+                      "on-error-container": "#93000a",
+                      "on-background": "#191c1d",
+                      "surface-tint": "#455f87",
+                      "on-tertiary-fixed-variant": "#60410c",
+                      "secondary": "#006687",
+                      "surface-variant": "#e1e3e4",
+                      "surface-dim": "#d9dadb",
+                      "outline": "#74777f",
+                      "on-primary-container": "#8aa4cf",
+                      "surface-container-low": "#f3f4f5",
+                      "on-surface": "#191c1d",
+                      "inverse-primary": "#adc8f5",
+                      "surface-container": "#edeeef",
+                      "on-primary": "#ffffff",
+                      "background": "#f8f9fa",
+                      "surface-bright": "#f8f9fa",
+                      "inverse-on-surface": "#f0f1f2",
+                      "on-secondary-fixed-variant": "#004d67",
+                      "error-container": "#ffdad6",
+                      "primary-fixed": "#d5e3ff",
+                      "on-primary-fixed-variant": "#2d486d",
+                      "on-secondary-container": "#005d7c",
+                      "surface-container-highest": "#e1e3e4",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary-fixed": "#001c3b",
+                      "error": "#ba1a1a",
+                      "primary": "#022448",
+                      "surface-container-high": "#e7e8e9",
+                      "outline-variant": "#c4c6cf",
+                      "primary-fixed-dim": "#adc8f5",
+                      "primary-container": "#1e3a5f",
+                      "tertiary": "#341f00",
+                      "on-error": "#ffffff",
+                      "on-surface-variant": "#43474e",
+                      "tertiary-container": "#503300",
+                      "on-tertiary-fixed": "#291800",
+                      "secondary-container": "#87d6fe",
+                      "tertiary-fixed": "#ffddb2",
+                      "inverse-surface": "#2e3132"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Manrope"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #022448 0%, #1e3a5f 100%);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        .shadow-ambient {
+            box-shadow: 0 12px 40px rgba(2, 36, 72, 0.06);
+        }
+      </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopNavBar -->
+<nav class="w-full sticky top-0 z-50 border-b border-slate-100 bg-white shadow-sm flex items-center justify-between px-8 py-4 max-w-full mx-auto font-manrope text-sm font-medium">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-blue-900">ResearchBridge</span>
+<div class="hidden md:flex items-center space-x-6">
+<a class="text-slate-500 hover:text-blue-800 transition-colors duration-200" href="#">Professors</a>
+<a class="text-slate-500 hover:text-blue-800 transition-colors duration-200" href="#">Emails</a>
+<a class="text-slate-500 hover:text-blue-800 transition-colors duration-200" href="#">Research Statement</a>
+<a class="text-blue-900 border-b-2 border-sky-600 pb-2" href="#">Grants</a>
+<a class="text-slate-500 hover:text-blue-800 transition-colors duration-200" href="#">Onboarding</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="cursor-pointer active:scale-95 p-2 hover:bg-slate-50 rounded-full transition-colors duration-200">
+<span class="material-symbols-outlined text-slate-600">notifications</span>
+</div>
+<div class="cursor-pointer active:scale-95 p-2 hover:bg-slate-50 rounded-full transition-colors duration-200">
+<span class="material-symbols-outlined text-slate-600">settings</span>
+</div>
+<div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="close-up portrait of a student researcher with a friendly expression in a sunlit academic library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUTqTm6nBxWRRoLCQY4WPcBghzJqd5elSKZi3l4bXCtPB924wXqb8BEkyXm_OP9zofiQgvcdPfxs11CB0AHgNgCYJ3xnwEFm_Gwzdeb1-GlWl2CU8GVBKvJIOZr-1voXh2zOpVNwYyi7TM-cYpI-32bIYQtyhaSoNd8i2K8RxXxJ9tq0YAKtpS9KKEKQUCMsW0rljSOcSCnL99rv2u09nHvfw7Vx8MozAFEwlGUTS3w9KCjpnSWNrXljXYoLExJdiKck6d76VQJzk"/>
+</div>
+</div>
+</nav>
+<main class="max-w-7xl mx-auto px-8 py-10 grid grid-cols-12 gap-10">
+<!-- Left Content Area -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Header Row -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<h1 class="text-3xl font-headline font-extrabold text-primary tracking-tight">3 Grants Matched to Your Profile</h1>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-md border-2 border-outline-variant text-secondary font-semibold hover:bg-surface-container-low transition-all duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'opsz' 20;">calendar_today</span>
+                    Export Deadlines to Google Calendar
+                </button>
+</div>
+<!-- Grant Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-ambient p-8 hover:bg-surface-bright transition-colors duration-300">
+<div class="flex flex-col md:flex-row justify-between items-start mb-6">
+<div>
+<h2 class="text-xl font-headline font-bold text-primary mb-1">NSF Research Experience for Undergraduates (REU)</h2>
+<p class="text-on-surface-variant font-medium">Funder: National Science Foundation</p>
+</div>
+<span class="mt-4 md:mt-0 inline-flex items-center px-4 py-1.5 rounded-full bg-error-container text-error text-xs font-bold uppercase tracking-wider">
+                        Deadline in 18 days
+                    </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="space-y-3">
+<p class="text-sm font-label font-bold text-primary-container uppercase tracking-tight">Award Details</p>
+<div class="flex items-center gap-2 text-primary font-bold text-lg">
+<span class="material-symbols-outlined text-secondary">payments</span>
+                            $5,500 stipend
+                        </div>
+</div>
+<div class="space-y-3">
+<p class="text-sm font-label font-bold text-primary-container uppercase tracking-tight">Eligibility</p>
+<div class="grid grid-cols-2 gap-2 text-sm text-on-surface-variant font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> US Citizen</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> STEM Major</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> Sophomore+</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> GPA 3.0+</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-surface-variant pt-6">
+<button class="editorial-gradient px-8 py-3 text-on-primary font-bold rounded-xl shadow-md hover:opacity-90 transition-opacity">
+                        Start Application
+                    </button>
+<a class="text-secondary font-bold hover:underline decoration-2 underline-offset-4" href="#">Learn More</a>
+</div>
+</div>
+<!-- Callout Strip -->
+<div class="bg-error-container/30 border-l-4 border-error p-5 rounded-r-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<p class="text-on-error-container font-semibold">Act Soon — 1 grant closes in less than 30 days.</p>
+</div>
+<!-- Grant Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-ambient p-8 hover:bg-surface-bright transition-colors duration-300">
+<div class="flex flex-col md:flex-row justify-between items-start mb-6">
+<div>
+<h2 class="text-xl font-headline font-bold text-primary mb-1">Barry Goldwater Scholarship</h2>
+<p class="text-on-surface-variant font-medium">Funder: Goldwater Foundation</p>
+</div>
+<span class="mt-4 md:mt-0 inline-flex items-center px-4 py-1.5 rounded-full bg-tertiary-fixed text-tertiary font-bold text-xs uppercase tracking-wider">
+                        Deadline in 54 days
+                    </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="space-y-3">
+<p class="text-sm font-label font-bold text-primary-container uppercase tracking-tight">Award Details</p>
+<div class="flex items-center gap-2 text-primary font-bold text-lg">
+<span class="material-symbols-outlined text-secondary">payments</span>
+                            $7,500
+                        </div>
+</div>
+<div class="space-y-3">
+<p class="text-sm font-label font-bold text-primary-container uppercase tracking-tight">Eligibility</p>
+<div class="grid grid-cols-2 gap-2 text-sm text-on-surface-variant font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> US Citizen</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> STEM Major</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> Junior status</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> GPA 3.7+</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-surface-variant pt-6">
+<button class="editorial-gradient px-8 py-3 text-on-primary font-bold rounded-xl shadow-md hover:opacity-90 transition-opacity">
+                        Start Application
+                    </button>
+<a class="text-secondary font-bold hover:underline decoration-2 underline-offset-4" href="#">Learn More</a>
+</div>
+</div>
+<!-- Grant Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-ambient p-8 hover:bg-surface-bright transition-colors duration-300">
+<div class="flex flex-col md:flex-row justify-between items-start mb-6">
+<div>
+<h2 class="text-xl font-headline font-bold text-primary mb-1">Ford Foundation Fellowship</h2>
+<p class="text-on-surface-variant font-medium">Funder: National Academies</p>
+</div>
+<span class="mt-4 md:mt-0 inline-flex items-center px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-bold text-xs uppercase tracking-wider">
+                        Deadline in 112 days
+                    </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="space-y-3">
+<p class="text-sm font-label font-bold text-primary-container uppercase tracking-tight">Award Details</p>
+<div class="flex items-center gap-2 text-primary font-bold text-lg">
+<span class="material-symbols-outlined text-secondary">school</span>
+                            Full tuition coverage
+                        </div>
+</div>
+<div class="space-y-3">
+<p class="text-sm font-label font-bold text-primary-container uppercase tracking-tight">Eligibility</p>
+<div class="grid grid-cols-2 gap-2 text-sm text-on-surface-variant font-medium">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> US Citizen</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> All Majors</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> Research Goal</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary scale-75" style="font-variation-settings: 'FILL' 1;">check_circle</span> Financial Need</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-6 border-t border-surface-variant pt-6">
+<button class="editorial-gradient px-8 py-3 text-on-primary font-bold rounded-xl shadow-md hover:opacity-90 transition-opacity">
+                        Start Application
+                    </button>
+<a class="text-secondary font-bold hover:underline decoration-2 underline-offset-4" href="#">Learn More</a>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Kit Summary -->
+<aside class="col-span-12 lg:col-span-4 h-fit sticky top-28">
+<div class="surface-container-low rounded-xl p-8 border border-outline-variant/15">
+<h3 class="text-lg font-headline font-extrabold text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+                    Kit Summary
+                </h3>
+<div class="space-y-6">
+<div class="flex items-center justify-between py-3 border-b border-surface-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">mail</span>
+<span class="text-on-surface-variant font-medium">Emails Ready</span>
+</div>
+<span class="text-primary font-bold">4</span>
+</div>
+<div class="flex items-center justify-between py-3 border-b border-surface-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">account_balance_wallet</span>
+<span class="text-on-surface-variant font-medium">Grants Found</span>
+</div>
+<span class="text-primary font-bold">3</span>
+</div>
+<div class="flex items-center justify-between py-3 border-b border-surface-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error">alarm</span>
+<span class="text-on-surface-variant font-medium">Grants Expiring Soon</span>
+</div>
+<span class="bg-error text-white text-xs font-bold px-2.5 py-1 rounded-full">1</span>
+</div>
+<div class="flex items-center justify-between py-3">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500">article</span>
+<span class="text-on-surface-variant font-medium">Statement</span>
+</div>
+<span class="text-secondary font-bold">Draft Ready</span>
+</div>
+</div>
+<div class="mt-8">
+<div class="relative h-40 w-full rounded-xl overflow-hidden mb-6">
+<img alt="Student collaboration" class="w-full h-full object-cover" data-alt="vibrant office space with students collaborating around a wooden table in soft natural daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9STOrEzlGJljiWzH9PgGSDjaSm4k80iJwVvFybV56TQJLp9O4387uT3y9KZ7qBW_pZiiblnm4FZc9xByoHuASlflO_6hQ13bjSIT6oTDzwa1XNjYUQcib3IE0xJouyJXE1iObY5YO7enErzkGkCpkEewlUd1toIIsIkbd8a2K2Yl5C-Yfjrvn2Zllgpe350_GPa0aEcqS1jWlHTzwDmpfe_Qmri9AN9XGmZxeuVDYPdVeDNpoIcPcLySvR_EAlbAGleMyK5euBPc"/>
+<div class="absolute inset-0 bg-primary/40 flex items-center justify-center">
+<span class="text-white font-bold text-center px-4">Research Success Story:<br/>Leo increased his funding by $12k</span>
+</div>
+</div>
+<button class="w-full py-4 text-secondary font-extrabold text-sm uppercase tracking-widest border-2 border-secondary rounded-xl hover:bg-secondary hover:text-white transition-all duration-300">
+                        View Application Guide
+                    </button>
+</div>
+</div>
+</aside>
+</main>
+<!-- FAB (Suppressed based on context rules, but adding subtle helper for research) -->
+<div class="fixed bottom-8 right-8">
+<button class="editorial-gradient h-14 w-14 rounded-full shadow-2xl flex items-center justify-center text-white cursor-pointer active:scale-95 transition-transform">
+<span class="material-symbols-outlined">help_center</span>
+</button>
+</div>
+</body></html>

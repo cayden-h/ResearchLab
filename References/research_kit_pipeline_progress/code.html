@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ResearchBridge | Building Your Research Kit</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#2b3545",
+                        "on-primary-fixed": "#001c3b",
+                        "tertiary-fixed": "#cde5ff",
+                        "inverse-on-surface": "#273141",
+                        "outline-variant": "#43474e",
+                        "secondary-container": "#017094",
+                        "secondary-fixed": "#c1e8ff",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#091422",
+                        "on-secondary-container": "#ceedff",
+                        "primary-fixed-dim": "#adc8f5",
+                        "surface-container-low": "#121c2b",
+                        "on-primary": "#133155",
+                        "surface": "#091422",
+                        "surface-container": "#16202f",
+                        "on-background": "#d9e3f8",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#adc8f5",
+                        "primary": "#adc8f5",
+                        "primary-container": "#1e3a5f",
+                        "on-tertiary-fixed": "#001d32",
+                        "on-secondary-fixed-variant": "#004d67",
+                        "inverse-primary": "#455f87",
+                        "surface-bright": "#303a4a",
+                        "error-container": "#93000a",
+                        "on-surface-variant": "#c4c6cf",
+                        "on-secondary": "#003548",
+                        "surface-container-high": "#212a3a",
+                        "tertiary-container": "#003d60",
+                        "background": "#091422",
+                        "secondary-fixed-dim": "#81d0f8",
+                        "on-tertiary-fixed-variant": "#004b74",
+                        "surface-container-lowest": "#050e1d",
+                        "inverse-surface": "#d9e3f8",
+                        "on-tertiary-container": "#58aaea",
+                        "secondary": "#81d0f8",
+                        "on-primary-fixed-variant": "#2d486d",
+                        "on-error": "#690005",
+                        "surface-variant": "#2b3545",
+                        "on-tertiary": "#003352",
+                        "on-primary-container": "#8aa4cf",
+                        "outline": "#8e9199",
+                        "tertiary-fixed-dim": "#94ccff",
+                        "on-secondary-fixed": "#001e2b",
+                        "tertiary": "#94ccff",
+                        "primary-fixed": "#d5e3ff",
+                        "on-surface": "#d9e3f8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .progress-spin {
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        body {
+            background-color: #091422; /* As per design system surface */
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface antialiased">
+<!-- TopNavBar Strategy: Transactional Screen Suppression. 
+         Wait, user requested a specific centered card screen, 
+         but we keep the TopNavBar for branding context as per Athenaeum identity. -->
+<header class="bg-[#091422]/80 backdrop-blur-xl text-blue-200 font-['Manrope'] text-sm tracking-wide fixed top-0 w-full z-50 flex justify-between items-center px-8 h-16 w-full">
+<div class="text-xl font-bold text-blue-100 tracking-tight">The Athenaeum AI</div>
+<div class="flex gap-6 items-center">
+<span class="text-slate-400 cursor-pointer active:opacity-70 hover:text-blue-200 transition-colors duration-300">Dashboard</span>
+<span class="text-slate-400 cursor-pointer active:opacity-70 hover:text-blue-200 transition-colors duration-300">Library</span>
+<span class="material-symbols-outlined cursor-pointer text-slate-400">help_outline</span>
+<img alt="User profile avatar" class="w-8 h-8 rounded-full border border-outline-variant/15" data-alt="close up professional portrait of a researcher with a neutral background in soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHVBxvKNNCqYNgpFgkCduRo3JzmiIQXvblwfKT2xQYC5DxuLOkrP41WXogJqb7qnq9XD1yPrPK1VYDdXSKE1vBMLfOhDjlEs3CF1ay3xsyN91ihg32d3BCay3YX_OiMgSr7NftU3_PguxVTAcu9BNOkzRXtltOFe3O11z2dHxeCMaWx9WEa_A6NuS2YcAyqIt2vpJCWiISeu531oq1xtGqRE_D6TdXm0bf1v4jOyINUK45PtKRwBpt-ycVqMNMwMBPfeasgvARGzc"/>
+</div>
+</header>
+<main class="min-h-screen pt-32 pb-20 px-6 flex flex-col items-center">
+<!-- Main Pipeline Card -->
+<div class="w-full max-w-[700px] bg-surface-container-low rounded-xl overflow-hidden p-10 relative">
+<!-- Research Progress Rail (Asymmetric Design Element) -->
+<div class="absolute left-6 top-40 bottom-40 w-[1px] bg-outline-variant/15"></div>
+<div class="relative z-10">
+<!-- Header Section -->
+<div class="mb-12">
+<h1 class="font-headline text-4xl font-extrabold text-on-surface tracking-tight mb-3">Building Your Research Kit</h1>
+<p class="text-on-surface-variant text-lg">Codex is working — this takes about 2 minutes.</p>
+</div>
+<!-- Pipeline Steps -->
+<div class="space-y-8 ml-4">
+<!-- Step 1: Done -->
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-secondary-container text-secondary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-on-surface">Finding matching labs at UT San Antonio</span>
+<span class="text-sm text-on-surface-variant">Found 6 professors in ML and Biomedical Engineering</span>
+</div>
+</div>
+<!-- Step 2: Done -->
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-secondary-container text-secondary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-on-surface">Reading Professor Chen's research</span>
+<span class="text-sm text-on-surface-variant">3 recent papers on imaging pipelines</span>
+</div>
+</div>
+<!-- Step 3: In Progress -->
+<div class="flex gap-6 group relative">
+<!-- Left Active Indicator -->
+<div class="absolute -left-[21px] top-1 bottom-1 w-1 bg-primary rounded-full"></div>
+<div class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-primary-container text-primary">
+<span class="material-symbols-outlined text-[20px] progress-spin">sync</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-semibold text-primary">Drafting personalized emails</span>
+<span class="text-sm text-on-surface-variant">Writing email to Prof. Martinez...</span>
+</div>
+</div>
+<!-- Step 4: Pending -->
+<div class="flex gap-6 opacity-40">
+<div class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full border border-outline">
+<div class="w-1.5 h-1.5 bg-outline rounded-full"></div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-medium text-on-surface">Building your research statement</span>
+</div>
+</div>
+<!-- Step 5: Pending -->
+<div class="flex gap-6 opacity-40">
+<div class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full border border-outline">
+<div class="w-1.5 h-1.5 bg-outline rounded-full"></div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-medium text-on-surface">Matching grants and fellowships</span>
+</div>
+</div>
+<!-- Step 6: Pending -->
+<div class="flex gap-6 opacity-40">
+<div class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full border border-outline">
+<div class="w-1.5 h-1.5 bg-outline rounded-full"></div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-medium text-on-surface">Creating your 12-week onboarding plan</span>
+</div>
+</div>
+<!-- Step 7: Pending -->
+<div class="flex gap-6 opacity-40">
+<div class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full border border-outline">
+<div class="w-1.5 h-1.5 bg-outline rounded-full"></div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-medium text-on-surface">Packaging your kit as PDF</span>
+</div>
+</div>
+</div>
+<!-- Footer / Progress Section -->
+<div class="mt-16 pt-10 border-t border-outline-variant/10">
+<div class="flex justify-between items-end mb-4">
+<div class="flex flex-col gap-1">
+<span class="text-xs font-bold uppercase tracking-widest text-primary">Status: Active Pipeline</span>
+<p class="text-sm text-on-surface-variant">Don't close this tab.</p>
+</div>
+<span class="font-headline font-bold text-2xl text-secondary">40%</span>
+</div>
+<!-- Progress Bar -->
+<div class="h-3 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-secondary w-[40%] transition-all duration-500 shadow-[0_0_15px_rgba(129,208,248,0.3)]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative Academic Background Element -->
+<div class="fixed top-0 right-0 w-1/3 h-full opacity-5 pointer-events-none -z-10 bg-no-repeat bg-right-top bg-contain" data-alt="Technical blueprint and architectural diagrams of a scientific laboratory with complex geometric patterns and light gray lines on dark navy" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdoOHz00eHJv5zgUKibYO9xef2HiX0x3xP0cxOfrY6M7Bj_H63HroxPn_die488kiYjZJK3OKep03vheHMSktc6a_yl-_k5vLN019eBFxcYdtQsc25H7-mhYjR-c9hfov17CtRV650YT9Z7dLvs5l6aMm6jyYdkfsqfWMq7rkZJOlxIPOBX-NPCbxMcB3WFenAMYmgaOgA4Fy14g-wGFVPN2Y1Fs2w9BgYNHYv6bcsmFHt-RgOB9mRoZfxw-mtEMMAZfQyYFthYks')">
+</div>
+</main>
+<!-- SideNav Context (Hidden on Mobile, but represented for branding architecture) -->
+<nav class="hidden lg:flex flex-col gap-2 h-screen w-64 fixed left-0 top-0 pt-20 bg-[#121c2b]">
+<div class="flex flex-col gap-1 px-6 mb-8">
+<span class="font-headline text-blue-100 font-bold tracking-tight">ResearchBridge</span>
+<span class="text-[10px] text-blue-300/60 uppercase tracking-[0.2em] font-medium">Academic Pipeline</span>
+</div>
+<div class="text-blue-200 border-l-4 border-blue-400 bg-blue-900/20 py-3 px-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<span class="font-['Inter'] text-xs font-medium uppercase tracking-widest">Current Run</span>
+</div>
+<div class="text-slate-500 py-3 px-6 flex items-center gap-3 hover:bg-white/5 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">history</span>
+<span class="font-['Inter'] text-xs font-medium uppercase tracking-widest">History</span>
+</div>
+<div class="text-slate-500 py-3 px-6 flex items-center gap-3 hover:bg-white/5 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">inventory_2</span>
+<span class="font-['Inter'] text-xs font-medium uppercase tracking-widest">Archives</span>
+</div>
+<div class="text-slate-500 py-3 px-6 flex items-center gap-3 hover:bg-white/5 transition-all cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="font-['Inter'] text-xs font-medium uppercase tracking-widest">Team</span>
+</div>
+<div class="mt-auto mb-8 px-6">
+<button class="w-full py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold text-xs rounded-md shadow-lg active:scale-95 transition-transform uppercase tracking-wider">
+                New Experiment
+            </button>
+</div>
+</nav>
+</body></html>

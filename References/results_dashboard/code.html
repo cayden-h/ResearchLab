@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ResearchBridge Results Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#291800",
+                    "on-secondary-fixed-variant": "#004d67",
+                    "tertiary-fixed-dim": "#edbf7f",
+                    "on-tertiary-fixed-variant": "#60410c",
+                    "primary-fixed": "#d5e3ff",
+                    "primary-fixed-dim": "#adc8f5",
+                    "secondary": "#006687",
+                    "surface-container-highest": "#e2e2e2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#43474e",
+                    "on-background": "#1a1c1c",
+                    "on-error-container": "#93000a",
+                    "primary": "#022448",
+                    "surface-container-low": "#f3f3f3",
+                    "on-secondary-container": "#005d7c",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-container": "#503300",
+                    "surface-container": "#eeeeee",
+                    "surface-tint": "#455f87",
+                    "surface-bright": "#f9f9f9",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#1a1c1c",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "inverse-primary": "#adc8f5",
+                    "surface-variant": "#e2e2e2",
+                    "secondary-container": "#87d6fe",
+                    "background": "#f9f9f9",
+                    "on-primary": "#ffffff",
+                    "secondary-fixed": "#c1e8ff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e8e8e8",
+                    "tertiary": "#341f00",
+                    "outline": "#74777f",
+                    "outline-variant": "#c4c6cf",
+                    "inverse-on-surface": "#f0f1f1",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#1e3a5f",
+                    "on-tertiary-container": "#c69b5f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-[#f9f9f9] dark:bg-slate-950 flex justify-between items-center px-8 py-4 w-full border-b border-[#c4c6cf]/15 z-50 sticky top-0">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tight text-[#022448] dark:text-blue-50">ResearchBridge</span>
+<nav class="hidden md:flex gap-6 font-manrope text-sm tracking-tight">
+<a class="text-[#006687] font-bold border-b-2 border-[#006687] pb-1" href="#">Professors</a>
+<a class="text-[#1a1c1c] dark:text-slate-400 font-medium hover:bg-[#f3f3f3] dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded" href="#">Emails</a>
+<a class="text-[#1a1c1c] dark:text-slate-400 font-medium hover:bg-[#f3f3f3] dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded" href="#">Grants</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 text-slate-600 hover:bg-[#f3f3f3] rounded-full transition-colors">notifications</button>
+<button class="material-symbols-outlined p-2 text-slate-600 hover:bg-[#f3f3f3] rounded-full transition-colors">settings</button>
+<img alt="Student Researcher Profile" class="w-8 h-8 rounded-full border border-outline-variant/30" data-alt="Close-up portrait of a professional young adult student researcher with a friendly expression in a modern university setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArdZ90G0EW_hrdLQZuDAVmcxm_NKOsgmTQqRLcwe_Y-ixCD781Wnnn8eXDxbgC9csdrzQKEx0uakfFQdEa7w-OI7Pg472rS4fpvfW8U1cRx-aKPt8TW1ZwR4nPP0v3QlXxLyrQMt292BcwJOurVioenIFwHb74BfG8JogL0OPt2xldrBcL1XJsAGn1ySnRIU0xyn1mxbcxKzZi1_n0MlQQA2-d1Z_6gqNP08qsZwNpLH6HnqRAjAXGew3hHyFLYm0kwe_lhhvAAgQ"/>
+</div>
+</header>
+<main class="flex-grow flex">
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex fixed left-0 top-16 flex-col h-[calc(100vh-64px)] py-6 bg-[#f3f3f3] dark:bg-slate-900 h-screen w-64 border-r border-[#c4c6cf]/15 shadow-[0px_12px_32px_rgba(2,36,72,0.06)] overflow-y-auto">
+<div class="px-6 mb-8">
+<h2 class="text-lg font-black text-[#022448] dark:text-blue-50">ResearchBridge</h2>
+<p class="font-manrope uppercase tracking-widest text-[11px] text-secondary opacity-70">The Scholarly Architect</p>
+</div>
+<nav class="flex-grow px-2 space-y-1">
+<a class="flex items-center gap-3 bg-white dark:bg-slate-800 text-[#006687] font-bold rounded-lg px-4 py-3 shadow-sm transition-all scale-105 duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-manrope uppercase tracking-widest text-[11px]">Professors</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-[#e2e2e2] dark:hover:bg-slate-800 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-manrope uppercase tracking-widest text-[11px]">Emails</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-[#e2e2e2] dark:hover:bg-slate-800 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-manrope uppercase tracking-widest text-[11px]">Research Statement</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-[#e2e2e2] dark:hover:bg-slate-800 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-manrope uppercase tracking-widest text-[11px]">Grants</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-3 hover:bg-[#e2e2e2] dark:hover:bg-slate-800 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span class="font-manrope uppercase tracking-widest text-[11px]">Onboarding Plan</span>
+</a>
+</nav>
+<div class="mt-auto px-2 border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2 hover:bg-[#e2e2e2] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+<span class="font-manrope uppercase tracking-widest text-[11px]">Kit Summary</span>
+</a>
+<a class="flex items-center gap-3 text-slate-600 dark:text-slate-400 px-4 py-2 hover:bg-[#e2e2e2] rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="history">history</span>
+<span class="font-manrope uppercase tracking-widest text-[11px]">Archive</span>
+</a>
+</div>
+</aside>
+<!-- Main Workspace Canvas -->
+<div class="flex-grow md:ml-64 bg-surface flex flex-col p-8 space-y-8">
+<!-- Success Banner -->
+<section class="bg-secondary-container/30 border border-secondary-container/40 p-4 rounded-xl flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="bg-secondary-container text-on-secondary-container p-2 rounded-full">
+<span class="material-symbols-outlined text-[20px]">check_circle</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-primary text-base">Your Research Kit is Ready</h3>
+<p class="text-sm text-on-surface-variant">6 professors matched, 4 emails drafted, 3 grants found.</p>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-md font-label text-[11px] font-bold uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                    Download Kit
+                </button>
+</section>
+<!-- Main Content Tabs -->
+<nav class="flex gap-10 border-b border-outline-variant/20 pb-4">
+<button class="text-primary font-bold border-b-2 border-primary pb-4 relative -bottom-[18px]">Professors</button>
+<button class="text-on-surface-variant font-medium pb-4 hover:text-primary transition-colors">Emails</button>
+<button class="text-on-surface-variant font-medium pb-4 hover:text-primary transition-colors">Research Statement</button>
+<button class="text-on-surface-variant font-medium pb-4 hover:text-primary transition-colors">Grants</button>
+<button class="text-on-surface-variant font-medium pb-4 hover:text-primary transition-colors">Onboarding Plan</button>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Cards Container -->
+<div class="lg:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant/15 p-6 rounded-xl shadow-[0px_12px_32px_rgba(2,36,72,0.06)] flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline font-bold text-primary text-lg leading-tight">Dr. Ana Martinez</h3>
+<p class="text-xs font-semibold text-secondary uppercase tracking-wider mt-1">Associate Professor</p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-1 rounded-full">94% Match</span>
+</div>
+<p class="text-[10px] text-on-surface-variant font-medium mb-3">DEPT: BIOMEDICAL ENGINEERING</p>
+<p class="text-sm text-on-surface leading-relaxed mb-6">Research focuses on automated medical imaging pipelines for cancer detection.</p>
+<div class="bg-surface-container-low p-4 rounded-lg mb-6">
+<p class="text-[11px] font-bold text-primary mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">psychology</span>
+                                Why we matched you
+                            </p>
+<ul class="text-[12px] text-on-surface-variant space-y-2 list-disc pl-4 leading-tight">
+<li>Overlap in Machine Learning applications</li>
+<li>Strong alignment with imaging dataset history</li>
+<li>Mutual interest in clinical diagnostic tools</li>
+</ul>
+</div>
+<div class="mt-auto space-y-2">
+<button class="w-full text-center py-2.5 border border-secondary-container text-on-secondary-container rounded-md font-label text-[10px] font-bold uppercase tracking-widest hover:bg-secondary-container/10 transition-colors">View Email Draft</button>
+<button class="w-full text-center py-2.5 bg-surface-container text-primary rounded-md font-label text-[10px] font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors">View Lab Page</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant/15 p-6 rounded-xl shadow-[0px_12px_32px_rgba(2,36,72,0.06)] flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline font-bold text-primary text-lg leading-tight">Dr. Julian Vance</h3>
+<p class="text-xs font-semibold text-secondary uppercase tracking-wider mt-1">Faculty</p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-1 rounded-full">88% Match</span>
+</div>
+<p class="text-[10px] text-on-surface-variant font-medium mb-3">DEPT: COMPUTER SCIENCE</p>
+<p class="text-sm text-on-surface leading-relaxed mb-6">Investigating human-computer interaction in educational software and adaptive learning environments.</p>
+<div class="mt-auto space-y-2">
+<button class="w-full text-center py-2.5 border border-secondary-container text-on-secondary-container rounded-md font-label text-[10px] font-bold uppercase tracking-widest hover:bg-secondary-container/10 transition-colors">View Email Draft</button>
+<button class="w-full text-center py-2.5 bg-surface-container text-primary rounded-md font-label text-[10px] font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors">View Lab Page</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant/15 p-6 rounded-xl shadow-[0px_12px_32px_rgba(2,36,72,0.06)] flex flex-col h-full">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline font-bold text-primary text-lg leading-tight">Dr. Sarah Chen</h3>
+<p class="text-xs font-semibold text-secondary uppercase tracking-wider mt-1">Lead Researcher</p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[11px] font-bold px-2 py-1 rounded-full">91% Match</span>
+</div>
+<p class="text-[10px] text-on-surface-variant font-medium mb-3">DEPT: DATA SCIENCE</p>
+<p class="text-sm text-on-surface leading-relaxed mb-6">Developing robust algorithms for large-scale genetic datasets and biological pattern recognition.</p>
+<div class="mt-auto space-y-2">
+<button class="w-full text-center py-2.5 border border-secondary-container text-on-secondary-container rounded-md font-label text-[10px] font-bold uppercase tracking-widest hover:bg-secondary-container/10 transition-colors">View Email Draft</button>
+<button class="w-full text-center py-2.5 bg-surface-container text-primary rounded-md font-label text-[10px] font-bold uppercase tracking-widest hover:bg-surface-container-highest transition-colors">View Lab Page</button>
+</div>
+</div>
+</div>
+<!-- Right Sidebar: Kit Summary -->
+<aside class="lg:col-span-3 space-y-6">
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/10">
+<h4 class="font-headline font-bold text-primary text-sm uppercase tracking-wider mb-6">Kit Summary</h4>
+<div class="space-y-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">drafts</span>
+<span class="text-sm font-medium text-on-surface">Emails Ready</span>
+</div>
+<span class="text-sm font-bold text-primary">4</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">monetization_on</span>
+<span class="text-sm font-medium text-on-surface">Grants Found</span>
+</div>
+<span class="text-sm font-bold text-primary">3</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error">alarm</span>
+<span class="text-sm font-medium text-on-surface">Grants Expiring</span>
+</div>
+<span class="text-sm font-bold text-error">1</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+<span class="text-sm font-medium text-on-surface">Statement</span>
+</div>
+<span class="text-[11px] font-bold bg-green-100 text-green-800 px-2 py-0.5 rounded uppercase">Draft Ready</span>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/10">
+<div class="bg-primary p-6 rounded-lg text-on-primary">
+<p class="text-[10px] font-bold uppercase tracking-[0.2em] mb-2 opacity-70">Next Steps</p>
+<p class="text-sm leading-relaxed mb-4">You have a draft email ready for Dr. Martinez. Would you like to review and send?</p>
+<button class="w-full py-2 bg-secondary text-white rounded-md text-[11px] font-bold uppercase tracking-widest hover:brightness-110 transition-all">Review Now</button>
+</div>
+</div>
+</div>
+<div class="bg-[#e2e2e2] p-4 rounded-xl border border-outline-variant/15">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<div>
+<p class="text-xs font-bold text-primary mb-1">Editorial Tip</p>
+<p class="text-[12px] text-on-surface-variant leading-snug">Personalize the first paragraph of your email drafts to mention specific publications for higher response rates.</p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-outline-variant/15 px-6 py-4 flex justify-around items-center shadow-lg">
+<button class="flex flex-col items-center gap-1 text-[#006687]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="text-[10px] font-bold">Matches</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">mail</span>
+<span class="text-[10px] font-medium">Emails</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">description</span>
+<span class="text-[10px] font-medium">Kit</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</nav>
+</body></html>

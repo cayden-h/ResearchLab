@@ -1,0 +1,234 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@400;500;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#c1e8ff",
+                        "primary-container": "#1e3a5f",
+                        "surface-dim": "#d9dadb",
+                        "tertiary-container": "#503300",
+                        "on-surface-variant": "#43474e",
+                        "surface-container-high": "#e7e8e9",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#8aa4cf",
+                        "secondary-fixed-dim": "#81d0f8",
+                        "inverse-primary": "#adc8f5",
+                        "outline-variant": "#c4c6cf",
+                        "tertiary-fixed": "#ffddb2",
+                        "surface-bright": "#f8f9fa",
+                        "surface-container": "#edeeef",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#60410c",
+                        "on-primary-fixed": "#001c3b",
+                        "secondary-container": "#87d6fe",
+                        "primary-fixed-dim": "#adc8f5",
+                        "on-secondary-fixed-variant": "#004d67",
+                        "on-primary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "secondary": "#006687",
+                        "on-tertiary-container": "#c69b5f",
+                        "tertiary-fixed-dim": "#edbf7f",
+                        "surface": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "primary": "#022448",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "on-secondary-container": "#005d7c",
+                        "background": "#f8f9fa",
+                        "surface-tint": "#455f87",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-fixed-variant": "#2d486d",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "tertiary": "#341f00",
+                        "surface-container-highest": "#e1e3e4",
+                        "outline": "#74777f",
+                        "on-secondary-fixed": "#001e2b",
+                        "on-tertiary-fixed": "#291800",
+                        "primary-fixed": "#d5e3ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Newsreader", "serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; }
+        .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none flex justify-between items-center px-12 h-20 max-w-full">
+<div class="text-2xl font-serif italic text-blue-900 dark:text-blue-50" style="">ResearchBridge</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300 font-sans text-sm tracking-wide" href="#" style="">Platform</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300 font-sans text-sm tracking-wide" href="#" style="">Scholars</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300 font-sans text-sm tracking-wide" href="#" style=""><br></a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-300 font-sans text-sm tracking-wide" href="#" style="">About</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="text-slate-500 dark:text-slate-400 font-medium hover:text-blue-700 font-sans text-sm tracking-wide transition-colors" style="">Sign In</button>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-md font-sans text-sm tracking-wide font-bold hover:opacity-90 transition-all" style="">Join Now</button>
+</div>
+</nav>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center px-12 py-24 overflow-hidden bg-surface">
+<!-- Glassmorphism decorative element -->
+<div class="absolute -right-24 top-24 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="absolute -left-24 bottom-12 w-64 h-64 bg-primary/5 rounded-full blur-2xl"></div>
+<div class="relative z-10 max-w-4xl">
+<h1 class="text-7xl md:text-8xl font-serif italic text-primary leading-tight tracking-tight mb-8" style="">
+                    Your Research Journey <br>Starts Here.
+                </h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-body max-w-2xl leading-relaxed mb-12" style="">
+                    ResearchBridge builds your complete lab application kit in under 3 minutes. Personalized emails, research statement, grants, and onboarding plan all in one.
+                </p>
+<div class="flex flex-wrap gap-6">
+<button class="bg-secondary-container text-on-secondary-container hover:bg-secondary transition-all px-10 py-4 rounded-md font-bold text-lg shadow-sm" style="">
+                        Build My Kit
+                    </button>
+<button class="flex items-center gap-2 text-primary font-bold px-6 py-4 hover:bg-surface-container-low transition-colors rounded-md group" style="">
+<span class="" style="">How it works</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform" data-icon="arrow_forward" style="">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="hidden lg:block absolute right-12 top-1/2 -translate-y-1/2 w-1/3">
+<div class="aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden shadow-2xl relative">
+<img class="w-full h-full object-cover opacity-90 mix-blend-multiply" data-alt="Modern academic research library with high ceilings, soft morning light filtering through large windows, and students working quietly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV0k7VfyA0gQoNfRPHKnE4_LApjX2u8IiKjebX6g16hbN676-XIBwBJwZYN9DruFoTdNOMalh5N_4dCpV-NB73bKbtzVGgg0tydbRSMRaW0c9ram_rJudcCEMp82Ih5pSFbHOdgPYMOEhsnhrsyJnvs8D1uSJinb9Pi7ISM83746ny1i9og3XaZDuy1jGYRs5wsBTdZz0VmgmD0l4NEKvnMzB20fuDNbsYCasNPA-s3bPeuj7w0UH8mzmFuQarMIpBihLA5284YQs" style="">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Stat Cards Section -->
+<section class="px-12 py-24 bg-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+<div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-secondary shadow-sm">
+<div class="mb-4">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="diversity_3" style="">diversity_3</span>
+</div>
+<div class="text-4xl font-serif italic text-primary mb-2" style="">30% of STEM undergrads</div>
+<p class="text-sm font-label text-on-surface-variant tracking-wide" style="">represent the initial equity gap in laboratory access.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-secondary shadow-sm">
+<div class="mb-4">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="school" style="">school</span>
+</div>
+<div class="text-4xl font-serif italic text-primary mb-2" style="">Under 15% of PhD entrants</div>
+<p class="text-sm font-label text-on-surface-variant tracking-wide" style="">come from first-generation academic backgrounds.</p>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl border-l-4 border-secondary shadow-sm">
+<div class="mb-4">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="timer" style="">timer</span>
+</div>
+<div class="text-4xl font-serif italic text-primary mb-2" style="">8–15 hours saved</div>
+<p class="text-sm font-label text-on-surface-variant tracking-wide" style="">per student by automating the administrative research kit.</p>
+</div>
+</div>
+</section>
+<!-- How It Works Section -->
+<section class="px-12 py-32 bg-background">
+<div class="max-w-7xl mx-auto text-center mb-24">
+<h2 class="text-5xl font-serif italic text-primary mb-4" style="">How It Works</h2>
+<div class="w-24 h-1 bg-secondary-container mx-auto"></div>
+</div>
+<div class="relative max-w-7xl mx-auto">
+<!-- Dotted Line Connection -->
+<div class="hidden lg:block absolute top-12 left-0 w-full h-[2px] border-t-2 border-dotted border-outline-variant z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-surface-container-lowest border border-outline-variant/15 flex items-center justify-center rounded-full mb-6 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="person_search" style="">person_search</span>
+</div>
+<div class="text-xs font-label uppercase tracking-widest text-secondary font-bold mb-3" style="">Step 01</div>
+<h3 class="text-xl font-headline font-bold text-primary mb-2" style="">Enter your profile</h3>
+<p class="text-on-surface-variant text-sm font-body" style="">Input your academic interests and history into our sanctuary portal.</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-surface-container-lowest border border-outline-variant/15 flex items-center justify-center rounded-full mb-6 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="psychology" style="">psychology</span>
+</div>
+<div class="text-xs font-label uppercase tracking-widest text-secondary font-bold mb-3" style="">Step 02</div>
+<h3 class="text-xl font-headline font-bold text-primary mb-2" style="">Codex finds your labs</h3>
+<p class="text-on-surface-variant text-sm font-body" style="">Our proprietary AI identifies high-alignment research opportunities.</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-surface-container-lowest border border-outline-variant/15 flex items-center justify-center rounded-full mb-6 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="folder_zip" style="">folder_zip</span>
+</div>
+<div class="text-xs font-label uppercase tracking-widest text-secondary font-bold mb-3" style="">Step 03</div>
+<h3 class="text-xl font-headline font-bold text-primary mb-2" style="">Get your full kit</h3>
+<p class="text-on-surface-variant text-sm font-body" style="">Receive your emails, statements, and grants in under three minutes.</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-surface-container-lowest border border-outline-variant/15 flex items-center justify-center rounded-full mb-6 shadow-sm">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="verified" style="">verified</span>
+</div>
+<div class="text-xs font-label uppercase tracking-widest text-secondary font-bold mb-3" style="">Step 04</div>
+<h3 class="text-xl font-headline font-bold text-primary mb-2" style="">Apply with confidence</h3>
+<p class="text-on-surface-variant text-sm font-body" style="">Submit with the authority of a seasoned academic professional.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA section -->
+<section class="px-12 py-32 bg-primary text-on-primary">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-4xl md:text-6xl font-serif italic mb-8" style="">Ready to Bridge the Gap?</h2>
+<p class="text-on-primary-container text-lg md:text-xl font-body mb-12 max-w-2xl mx-auto" style="">
+                    Join hundreds of scholars who have successfully navigated the lab application process with ResearchBridge.
+                </p>
+<button class="bg-secondary-container text-on-secondary-container hover:bg-secondary-fixed transition-all px-12 py-5 rounded-md font-bold text-xl" style="">
+                    Begin Your Application
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 flex flex-col items-center justify-center space-y-6 bg-slate-900 border-t border-slate-200/15">
+<div class="font-serif text-lg italic text-blue-100" style="">ResearchBridge</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-slate-400 hover:text-blue-200 transition-colors font-sans text-xs uppercase tracking-widest" href="#" style="">Privacy Policy</a>
+<a class="text-slate-400 hover:text-blue-200 transition-colors font-sans text-xs uppercase tracking-widest" href="#" style="">Ethical Guidelines</a>
+<a class="text-slate-400 hover:text-blue-200 transition-colors font-sans text-xs uppercase tracking-widest" href="#" style="">Academic Integrity</a>
+<a class="text-slate-400 hover:text-blue-200 transition-colors font-sans text-xs uppercase tracking-widest" href="#" style="">OpenAI Codex</a>
+</div>
+<div class="flex items-center gap-3 bg-slate-800/50 px-4 py-2 rounded border border-slate-700/50">
+<span class="text-xs font-label uppercase tracking-widest text-slate-400" style="">Built with</span>
+<span class="font-bold text-xs tracking-tighter text-white" style="">OpenAI Codex</span>
+</div>
+<div class="text-slate-500 font-sans text-xs uppercase tracking-widest mt-4" style="">
+            © 2026 ResearchBridge. The Scholar's Sanctuary.
+        </div>
+</footer>
+</body></html>

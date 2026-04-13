@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #191c1d;
+  background: #f8f9fa;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(173, 200, 245, 0.18), transparent 28%),
+    linear-gradient(180deg, #f8f9fa 0%, #f3f4f5 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer components {
+  .field {
+    @apply grid gap-3;
+  }
+
+  .field > span {
+    @apply font-sans text-sm font-extrabold uppercase tracking-[0.18em] text-primary;
+  }
+
+  .field input,
+  .field textarea,
+  .field select {
+    @apply w-full rounded-[1.3rem] border border-outline/60 bg-surface-low px-5 py-4 font-body text-base text-ink outline-none transition focus:border-secondary focus:bg-white;
+  }
+}
+

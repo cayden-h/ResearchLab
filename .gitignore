@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.vite/
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+*.pyc
+*.egg-info/
+*.tsbuildinfo
+apps/web/vite.config.js
+apps/web/vite.config.d.ts
+.DS_Store

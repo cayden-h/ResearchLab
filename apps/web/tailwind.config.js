@@ -4,13 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#f8f9fa',
-        surface: '#ffffff',
-        'surface-low': '#f3f4f5',
-        'surface-muted': '#e8ecef',
+        background: '#f5f1ea',
+        surface: '#fffdf9',
+        'surface-low': '#efebe4',
+        'surface-muted': '#e4ddd2',
         primary: '#022448',
         secondary: '#006687',
         'secondary-soft': '#87d6fe',
+        accent: '#b28752',
         ink: '#191c1d',
         muted: '#43474e',
         outline: '#c4c6cf',
@@ -28,7 +29,7 @@ export default {
         ambient: '0 12px 40px rgba(2, 36, 72, 0.08)',
       },
       backgroundImage: {
-        hero: 'linear-gradient(135deg, rgba(2,36,72,0.98) 0%, rgba(30,58,95,0.94) 60%, rgba(0,102,135,0.82) 100%)',
+        hero: 'linear-gradient(135deg, rgba(2,36,72,0.97) 0%, rgba(17,51,80,0.95) 56%, rgba(0,102,135,0.86) 100%)',
       },
     },
   },

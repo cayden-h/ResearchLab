@@ -4,16 +4,32 @@
 
 :root {
   color: #191c1d;
-  background: #f8f9fa;
+  background: #f5f1ea;
   font-family: Inter, system-ui, sans-serif;
+  --paper: #fffdf9;
+  --wash: #efebe4;
+  --wash-strong: #e4ddd2;
+  --ink: #191c1d;
+  --muted: #43474e;
+  --navy: #022448;
+  --teal: #006687;
+  --sky: #87d6fe;
+  --accent: #b28752;
+  --shadow: 0 20px 48px rgba(2, 36, 72, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at top left, rgba(173, 200, 245, 0.18), transparent 28%),
-    linear-gradient(180deg, #f8f9fa 0%, #f3f4f5 100%);
+    radial-gradient(circle at top left, rgba(173, 200, 245, 0.22), transparent 24%),
+    radial-gradient(circle at 85% 15%, rgba(178, 135, 82, 0.14), transparent 18%),
+    linear-gradient(180deg, #f5f1ea 0%, #f9f6f0 45%, #f0ebe3 100%);
+  color: var(--ink);
 }
 
 a {
@@ -25,19 +41,126 @@ a {
   box-sizing: border-box;
 }
 
+*::selection {
+  background: rgba(135, 214, 254, 0.35);
+}
+
+#root {
+  min-height: 100vh;
+}
+
 @layer components {
+  .app-shell-bg {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .app-shell-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(rgba(2, 36, 72, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(2, 36, 72, 0.03) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.4), transparent 92%);
+    pointer-events: none;
+  }
+
+  .page-frame {
+    @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+  }
+
+  .section-band {
+    @apply py-10 lg:py-14;
+  }
+
+  .section-panel {
+    background: color-mix(in srgb, var(--paper) 82%, transparent);
+    box-shadow: var(--shadow);
+    @apply rounded-[2rem] backdrop-blur-sm;
+  }
+
+  .editorial-panel {
+    background: color-mix(in srgb, var(--paper) 90%, transparent);
+    box-shadow: var(--shadow);
+    @apply rounded-[1.75rem];
+  }
+
+  .eyebrow {
+    @apply font-sans text-[0.72rem] font-extrabold uppercase tracking-[0.24em] text-secondary;
+  }
+
+  .display-title {
+    @apply font-display text-5xl leading-[0.94] md:text-6xl xl:text-7xl;
+  }
+
+  .section-title {
+    @apply font-display text-4xl leading-tight text-primary md:text-5xl;
+  }
+
+  .body-copy {
+    @apply font-body text-base leading-8;
+  }
+
+  .primary-button {
+    background: linear-gradient(135deg, #022448 0%, #18405f 60%, #006687 100%);
+    @apply inline-flex min-h-[3.25rem] items-center justify-center rounded-full px-6 py-3 font-sans text-sm font-extrabold uppercase tracking-[0.18em] text-white transition duration-300 hover:-translate-y-0.5 hover:shadow-ambient disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0;
+  }
+
+  .secondary-button {
+    background: rgba(255, 253, 249, 0.72);
+    @apply inline-flex min-h-[3.25rem] items-center justify-center rounded-full px-6 py-3 font-sans text-sm font-extrabold uppercase tracking-[0.18em] text-primary transition duration-300 hover:-translate-y-0.5;
+  }
+
+  .ghost-button {
+    @apply inline-flex min-h-[3.25rem] items-center justify-center rounded-full px-6 py-3 font-sans text-sm font-extrabold uppercase tracking-[0.18em] text-primary transition duration-300 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:translate-y-0;
+    background: rgba(255, 253, 249, 0.64);
+    box-shadow: inset 0 0 0 1px rgba(2, 36, 72, 0.1);
+  }
+
+  .chip-button {
+    @apply rounded-full px-4 py-2 font-sans text-xs font-bold uppercase tracking-[0.16em] transition duration-200;
+    background: rgba(255, 253, 249, 0.76);
+    box-shadow: inset 0 0 0 1px rgba(2, 36, 72, 0.08);
+  }
+
+  .chip-button-active {
+    background: linear-gradient(135deg, rgba(2, 36, 72, 0.94), rgba(0, 102, 135, 0.88));
+    @apply text-white shadow-ambient;
+    box-shadow: none;
+  }
+
+  .metric-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.68));
+    box-shadow: var(--shadow);
+    @apply rounded-[1.6rem] p-6 backdrop-blur-sm;
+  }
+
   .field {
     @apply grid gap-3;
   }
 
   .field > span {
-    @apply font-sans text-sm font-extrabold uppercase tracking-[0.18em] text-primary;
+    @apply font-sans text-xs font-extrabold uppercase tracking-[0.2em] text-primary;
   }
 
   .field input,
   .field textarea,
   .field select {
-    @apply w-full rounded-[1.3rem] border border-outline/60 bg-surface-low px-5 py-4 font-body text-base text-ink outline-none transition focus:border-secondary focus:bg-white;
+    background: rgba(255, 253, 249, 0.96);
+    box-shadow: inset 0 -2px 0 rgba(2, 36, 72, 0.14);
+    @apply w-full rounded-[1.3rem] px-5 py-4 font-body text-base text-ink outline-none transition duration-200 focus:bg-white focus:shadow-[inset_0_-3px_0_rgba(0,102,135,0.75)];
+  }
+
+  .field textarea {
+    @apply resize-y;
+  }
+
+  .soft-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(2, 36, 72, 0.12), transparent);
   }
 }
 

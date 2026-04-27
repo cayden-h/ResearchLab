@@ -1,0 +1,32 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.4
+2 info using node@v22.21.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\exzell\Documents\GitHub\ResearchLab\apps\web\.npmrc
+5 silly config load:file:C:\Users\exzell\.npmrc
+6 silly config load:file:C:\Users\exzell\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm audit
+8 verbose argv "audit" "--omit" "dev" "--json"
+9 verbose logfile logs-max:10 dir:C:\Users\exzell\Documents\GitHub\ResearchLab\apps\web\.npm-cache\_logs\2026-04-27T02_24_55_351Z-
+10 verbose logfile C:\Users\exzell\Documents\GitHub\ResearchLab\apps\web\.npm-cache\_logs\2026-04-27T02_24_55_351Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 silly audit bulk request {
+13 silly audit   '@remix-run/router': [ '1.23.2' ],
+13 silly audit   gsap: [ '3.15.0' ],
+13 silly audit   'js-tokens': [ '4.0.0' ],
+13 silly audit   'loose-envify': [ '1.4.0' ],
+13 silly audit   react: [ '18.3.1' ],
+13 silly audit   'react-dom': [ '18.3.1' ],
+13 silly audit   'react-router': [ '6.30.3' ],
+13 silly audit   'react-router-dom': [ '6.30.3' ],
+13 silly audit   scheduler: [ '0.23.2' ]
+13 silly audit }
+14 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 172ms
+15 silly audit report {}
+16 verbose cwd C:\Users\exzell\Documents\GitHub\ResearchLab\apps\web
+17 verbose os Windows_NT 10.0.26200
+18 verbose node v22.21.0
+19 verbose npm  v10.9.4
+20 verbose exit 0
+21 info ok

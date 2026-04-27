@@ -1,0 +1,31 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@10.9.4
+2 info using node@v22.21.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\exzell\Documents\GitHub\ResearchLab\apps\web\.npmrc
+5 silly config load:file:C:\Users\exzell\.npmrc
+6 silly config load:file:C:\Users\exzell\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm outdated
+8 verbose argv "outdated" "--json"
+9 verbose logfile logs-max:10 dir:C:\Users\exzell\Documents\GitHub\ResearchLab\apps\web\.npm-cache\_logs\2026-04-27T02_12_35_460Z-
+10 verbose logfile C:\Users\exzell\Documents\GitHub\ResearchLab\apps\web\.npm-cache\_logs\2026-04-27T02_12_35_460Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4345298944 maxSize:1086324736 maxEntrySize:543162368
+13 http fetch GET 200 https://registry.npmjs.org/postcss 111ms (cache revalidated)
+14 http fetch GET 200 https://registry.npmjs.org/vite 115ms (cache revalidated)
+15 http fetch GET 200 https://registry.npmjs.org/tailwindcss 139ms (cache revalidated)
+16 http fetch GET 200 https://registry.npmjs.org/autoprefixer 186ms (cache revalidated)
+17 http fetch GET 200 https://registry.npmjs.org/@vitejs%2fplugin-react 199ms (cache miss)
+18 http fetch GET 200 https://registry.npmjs.org/gsap 205ms (cache miss)
+19 http fetch GET 200 https://registry.npmjs.org/@types%2freact-dom 209ms (cache miss)
+20 http fetch GET 200 https://registry.npmjs.org/react-router-dom 244ms (cache miss)
+21 http fetch GET 200 https://registry.npmjs.org/react 366ms (cache miss)
+22 http fetch GET 200 https://registry.npmjs.org/@types%2freact 412ms (cache miss)
+23 http fetch GET 200 https://registry.npmjs.org/typescript 478ms (cache miss)
+24 http fetch GET 200 https://registry.npmjs.org/react-dom 561ms (cache miss)
+25 verbose cwd C:\Users\exzell\Documents\GitHub\ResearchLab\apps\web
+26 verbose os Windows_NT 10.0.26200
+27 verbose node v22.21.0
+28 verbose npm  v10.9.4
+29 verbose exit 1
+30 verbose code 1
